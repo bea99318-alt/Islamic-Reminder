@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>إمساكية رمضان</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+    <h2>🕌 Islamic Reminder</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="prayers.html">Prayers</a></li>
+      <li><a href="azkar.html">Azkar</a></li>
+      <li><a href="emsaqia.html">Emsaqia</a></li>
+    </ul>
+  </nav>
+
+<h1>إمساكية اليوم</h1>
+<div id="ramadanTimes"></div>
+
+<script>
+fetch("https://api.aladhan.com/v1/timingsByCity?city=Cairo&country=Egypt&method=5")
+.then(res => res.json())
+.then(data => {
+
+    const t = data.data.timings;
+
+    document.getElementById("ramadanTimes").innerHTML = `
+        <div class="card">السحور: ${t.Fajr}</div>
+        <div class="card">الإفطار: ${t.Maghrib}</div>
+    `;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>الأذكار</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <nav>
+    <h2>🕌 Islamic Reminder</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="prayers.html">Prayers</a></li>
+      <li><a href="azkar.html">Azkar</a></li>
+      <li><a href="emsaqia.html">Emsaqia</a></li>
+    </ul>
+  </nav>
+    <div class="sebha-container">
+
+  <div class="zekr-box">
+    <h3>سبحان الله</h3>
+    <div class="count">0</div>
+    <button onclick="tasbeh(this)">سبّح</button>
+  </div>
+
+  <div class="zekr-box">
+    <h3>الحمد لله</h3>
+    <div class="count">0</div>
+    <button onclick="tasbeh(this)">سبّح</button>
+  </div>
+
+  <div class="zekr-box">
+    <h3>الله أكبر</h3>
+    <div class="count">0</div>
+    <button onclick="tasbeh(this)">سبّح</button>
+  </div>
+
+  <div class="zekr-box">
+    <h3>لا إله إلا الله</h3>
+    <div class="count">0</div>
+    <button onclick="tasbeh(this)">سبّح</button>
+    <script>
+        function tasbeh(btn) {
+
+  const box = btn.parentElement;
+  const countEl = box.querySelector(".count");
+
+  let count = Number(countEl.innerHTML);
+  count++;
+
+  countEl.innerHTML = count;
+
+}
+    </script>
+</body>
+</html>

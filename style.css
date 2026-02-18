@@ -1,0 +1,322 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Tahoma;
+}
+
+/* BODY */
+body{
+  padding-top:80px; 
+  background: white;
+}
+
+
+h1 {
+    text-align: center; 
+    font-size: 35px;    
+    color: #f1f2f6;     
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 2px 2px 5px rgba(0,0,0,0.5)
+}
+
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  background:rgba(11,61,46,0.95);
+  color:white;
+  z-index:1000;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+}
+
+nav ul li{
+  margin-left:25px;
+}
+
+
+nav ul li a{
+  position: relative;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  transition:0.3s;
+  padding:5px;
+}
+
+nav ul li a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0%;
+  height:2px;
+  background:#ffd369;
+  transition:0.4s;
+}
+
+nav ul li a:hover::after{
+  width:100%;
+}
+
+nav ul li a:hover{
+  color:#ffd369;
+}
+
+
+.home, .prayers-section, .azkar-section, .ramadan-section{
+  min-height:100vh;
+  width: 100%;
+  background-image: url("Islamic.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+.overlay{
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding:50px;
+  border-radius:25px;
+  text-align:center;
+  color:white;
+  width:85%;
+  max-width:90%;
+  flex-wrap: wrap;
+
+  animation:slideUp 1.2s ease;
+}
+
+.overlay h1{
+  font-size:30px;
+  margin-bottom:25px;
+  line-height:1.6;
+}
+
+.overlay p{
+  font-size:23px;
+  line-height:1.7;
+}
+
+.overlay h1,
+.overlay p{
+  transition:0.5s;
+}
+
+/* Slide Up Animation */
+@keyframes slideUp{
+  from{
+    opacity:0;
+    transform:translateY(60px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+section.content{
+  padding:50px 20px;
+  max-width:900px;
+  margin: auto;
+}
+
+section.content h2{
+  font-size:28px;
+  color:#0b3d2e;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+section.content p, section.content li{
+  font-size:20px;
+  line-height:1.7;
+  margin-bottom:15px;
+}
+
+/* Buttons (لو فيه Buttons) */
+.btn{
+  background:#ffd369;
+  padding:12px 25px;
+  text-decoration:none;
+  color:#000;
+  border-radius:8px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#e6c04f;
+}
+/* ---------------- Home Page ---------------- */
+.home{
+  height:100vh; /* يغطي الشاشة بالكامل */
+  width:100%;
+  background-image: url("Islamic.jpeg"); /* خلي الصورة هنا */
+  background-repeat: no-repeat;          /* لا تتكرر */
+  background-position: center center;    /* مركز الصورة */
+  background-size: cover;                /* تغطي الشاشة بالكامل */
+  background-attachment: fixed;          /* Parallax */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .overlay{
+  display: flex;
+  flex-direction: row;      /* جنب بعض */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;                /* مسافة بينهم */
+  background: rgba(0,0,0,0.45);
+  padding: 20px 40px;
+  border-radius: 25px;
+  color: white;
+  flex-wrap: wrap;          /* لو الشاشة ضيقة ينزلوا سطر ثاني */
+  text-align: center;
+}
+
+#ayah, #hadith{
+  display: inline-block;    /* مهم جدًا للعرض جنب بعض */
+  margin: 0;
+  font-size: 24px;
+}
+
+
+.sebha-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+
+.zekr-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.zekr-box:hover {
+    transform: translateY(-10px); 
+}
+
+.zekr-box h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.zekr-box .count {
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffd369;
+    margin: 15px 0;
+}
+
+.zekr-box button {
+    background: #ffd369;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.zekr-box button:active {
+    transform: scale(0.9); /* تأثير الضغط */
+}
+
+#times, #ramadanTimes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 40px;
+}
+
+/* الكارت الصغير لكل وقت صلاة أو موعد */
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 3px solid #ffd369;
+    padding: 20px;
+    border-radius: 15px;
+    min-width: 140px;
+    text-align: center;
+    color: white;
+}
+
+.card div:first-child {
+    font-weight: bold;
+    color: #ffd369;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+
+#times, #ramadanTimes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 4px solid #ffd369; 
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 150px;
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.card .prayer-name {
+    color: #ffd369;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card .prayer-time {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
